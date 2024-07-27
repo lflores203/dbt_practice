@@ -1,0 +1,8 @@
+logs/
+venv/
+
+dbt_practice/target/
+dbt_practice/dbt_packages/
+db_practice/logs/
+
+.DS_Store
