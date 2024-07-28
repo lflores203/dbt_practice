@@ -10,4 +10,4 @@ from
 group by
     1
 having
-    total_amount < 0
+    not(total_amount >= 0)
