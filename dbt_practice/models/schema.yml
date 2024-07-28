@@ -1,12 +1,12 @@
 version: 2
 
 models:
-  - name: customers
+  - name: dim_customers
     description: One record per customer
     columns:
       - name: customer_id
         description: Primary key
-        tests:
+        data_tests:
           - unique
           - not_null
       - name: first_order_date
@@ -17,7 +17,7 @@ models:
     columns:
       - name: customer_id
         description: Primary key
-        tests:
+        data_tests:
           - unique
           - not_null
 
@@ -26,15 +26,15 @@ models:
     columns:
       - name: order_id
         description: Primary key
-        tests:
+        data_tests:
           - unique
           - not_null
       - name: status
-        tests:
+        data_tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
       - name: customer_id
-        tests:
+        data_tests:
           - not_null
           - relationships:
               to: ref('stg_jaffle_customers')
